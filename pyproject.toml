@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "geobr-mcp"
+version = "0.1.0"
+description = "Servidor MCP de geodésia e topografia para o Brasil: UTM, SAD 69 ↔ SIRGAS 2000, RBMC, poligonal e drone."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Maessa Oliveira" }]
+requires-python = ">=3.10"
+dependencies = [
+  "mcp>=1.20,<2",
+  "geobr-tools @ git+https://github.com/maessa-oliveira/geobr-tools",
+]
+keywords = ["mcp", "claude", "geodesia", "topografia", "sirgas2000", "utm", "rbmc", "gnss", "brasil"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pyproj>=3.6", "ruff>=0.5"]
+
+[project.scripts]
+geobr-mcp = "geobr_mcp.servidor:main"
+
+[project.urls]
+Homepage = "https://github.com/maessa-oliveira/geobr-mcp"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/geobr_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 120
