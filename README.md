@@ -3,14 +3,14 @@
 [![CI](https://github.com/maessa-oliveira/geobr-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/maessa-oliveira/geobr-mcp/actions/workflows/ci.yml)
 [![Licença: MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-green)](LICENSE)
 
-**Servidor MCP de geodésia e topografia para o Brasil.** Conecta o Claude (ou qualquer assistente
-compatível com o *Model Context Protocol*) a cálculos geodésicos testados. Em vez de "fazer de
+**Servidor MCP de geodésia e topografia para o Brasil.** Conecta assistentes de IA compatíveis
+com o *Model Context Protocol* a cálculos geodésicos testados. Em vez de "fazer de
 cabeça", a IA usa ferramentas conferidas contra o PROJ e os parâmetros oficiais do IBGE.
 
 > 🇬🇧 *MCP server with Brazilian geodesy and land-surveying tools (UTM, SAD 69 ↔ SIRGAS 2000, RBMC
 > GNSS stations, traverse adjustment, drone GSD), so AI assistants compute with tested code instead of guessing.*
 
-## O que você pode pedir ao Claude
+## Exemplos de pedidos
 
 > "Converta estes 40 pontos de UTM SAD 69 fuso 24 para SIRGAS 2000."
 >
@@ -41,7 +41,7 @@ o servidor usa uma cópia embutida.
 
 Precisa do [uv](https://docs.astral.sh/uv/) (ou de Python 3.10+ com pip).
 
-**Claude Desktop**: em *Configurações → Desenvolvedor → Editar configuração*, adicione:
+**Cliente MCP (arquivo de configuração)**: adicione ao bloco `mcpServers` do seu aplicativo:
 
 ```json
 {
@@ -54,11 +54,7 @@ Precisa do [uv](https://docs.astral.sh/uv/) (ou de Python 3.10+ com pip).
 }
 ```
 
-**Claude Code**:
-
-```bash
-claude mcp add geobr -- uvx --from git+https://github.com/maessa-oliveira/geobr-mcp geobr-mcp
-```
+**Linha de comando**: `uvx --from git+https://github.com/maessa-oliveira/geobr-mcp geobr-mcp` inicia o servidor (stdio).
 
 **Com pip**: `pip install git+https://github.com/maessa-oliveira/geobr-mcp` e use o comando `geobr-mcp`.
 
