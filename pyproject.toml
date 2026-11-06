@@ -15,7 +15,7 @@ dependencies = [
   "mcp>=1.20,<2",
   "geobr-tools @ git+https://github.com/maessa-oliveira/geobr-tools",
 ]
-keywords = ["mcp", "claude", "geodesia", "topografia", "sirgas2000", "utm", "rbmc", "gnss", "brasil"]
+keywords = ["mcp", "geodesia", "topografia", "sirgas2000", "utm", "rbmc", "gnss", "brasil"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "pyproj>=3.6", "ruff>=0.5"]
