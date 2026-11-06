@@ -1,5 +1,5 @@
-"""Servidor MCP: expõe os cálculos geodésicos e topográficos como ferramentas para o Claude
-(ou qualquer cliente MCP). Rode com ``geobr-mcp`` (transporte stdio)."""
+"""Servidor MCP: expõe os cálculos geodésicos e topográficos como ferramentas para qualquer
+cliente MCP. Rode com ``geobr-mcp`` (transporte stdio)."""
 
 from __future__ import annotations
 
